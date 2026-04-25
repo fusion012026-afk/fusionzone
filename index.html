@@ -1,0 +1,2796 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FusionZone - Premium Child Education Platform</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "ui-sans-serif", "system-ui"],
+              space: ["Space Grotesk", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-poppins bg-[#09090b] text-white overflow-x-hidden">
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-[9999] bg-[#09090b] flex items-center justify-center"
+    >
+      <div class="loader-3d">
+        <div class="loader-cube">
+          <div class="cube-face front"></div>
+          <div class="cube-face back"></div>
+          <div class="cube-face right"></div>
+          <div class="cube-face left"></div>
+          <div class="cube-face top"></div>
+          <div class="cube-face bottom"></div>
+        </div>
+      </div>
+      <p
+        class="absolute bottom-20 text-zinc-400 text-sm tracking-widest uppercase loader-text"
+      >
+        Loading FusionZone
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <a
+            href="#"
+            onclick="navigateTo('home')"
+            class="flex items-center gap-3 group"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300"
+            >
+              <iconify-icon
+                icon="lucide:graduation-cap"
+                width="22"
+                class="text-white"
+              ></iconify-icon>
+            </div>
+            <span class="text-xl font-semibold tracking-tight font-space"
+              >Fusion<span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400"
+                >Zone</span
+              ></span
+            >
+          </a>
+          <div class="hidden lg:flex items-center gap-1">
+            <a
+              href="#"
+              onclick="navigateTo('home')"
+              class="nav-link active"
+              data-page="home"
+              >Home</a
+            >
+            <a
+              href="#"
+              onclick="navigateTo('about')"
+              class="nav-link"
+              data-page="about"
+              >About</a
+            >
+            <div class="relative group">
+              <a
+                href="#"
+                onclick="navigateTo('classes')"
+                class="nav-link flex items-center gap-1"
+                data-page="classes"
+              >
+                Classes
+                <iconify-icon
+                  icon="lucide:chevron-down"
+                  width="14"
+                ></iconify-icon>
+              </a>
+              <div
+                class="mega-menu absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300"
+              >
+                <div
+                  class="bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 w-[600px] grid grid-cols-3 gap-3 shadow-2xl"
+                >
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('lkg')"
+                    class="mega-item"
+                    style="--accent: #ff6b6b"
+                  >
+                    <span class="mega-dot"></span>LKG
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('ukg')"
+                    class="mega-item"
+                    style="--accent: #ffa94d"
+                  >
+                    <span class="mega-dot"></span>UKG
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class1')"
+                    class="mega-item"
+                    style="--accent: #ffd43b"
+                  >
+                    <span class="mega-dot"></span>Class 1
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class2')"
+                    class="mega-item"
+                    style="--accent: #69db7c"
+                  >
+                    <span class="mega-dot"></span>Class 2
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class3')"
+                    class="mega-item"
+                    style="--accent: #4dabf7"
+                  >
+                    <span class="mega-dot"></span>Class 3
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class4')"
+                    class="mega-item"
+                    style="--accent: #9775fa"
+                  >
+                    <span class="mega-dot"></span>Class 4
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class5')"
+                    class="mega-item"
+                    style="--accent: #f06595"
+                  >
+                    <span class="mega-dot"></span>Class 5
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class6')"
+                    class="mega-item"
+                    style="--accent: #20c997"
+                  >
+                    <span class="mega-dot"></span>Class 6
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class7')"
+                    class="mega-item"
+                    style="--accent: #339af0"
+                  >
+                    <span class="mega-dot"></span>Class 7
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class8')"
+                    class="mega-item"
+                    style="--accent: #845ef7"
+                  >
+                    <span class="mega-dot"></span>Class 8
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class9')"
+                    class="mega-item"
+                    style="--accent: #e64980"
+                  >
+                    <span class="mega-dot"></span>Class 9
+                  </a>
+                  <a
+                    href="#"
+                    onclick="navigateToLMS('class10')"
+                    class="mega-item"
+                    style="--accent: #f76707"
+                  >
+                    <span class="mega-dot"></span>Class 10
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a
+              href="#"
+              onclick="navigateTo('blog')"
+              class="nav-link"
+              data-page="blog"
+              >Blog</a
+            >
+            <a
+              href="#"
+              onclick="navigateTo('pricing')"
+              class="nav-link"
+              data-page="pricing"
+              >Pricing</a
+            >
+            <a
+              href="#"
+              onclick="navigateTo('contact')"
+              class="nav-link"
+              data-page="contact"
+              >Contact</a
+            >
+          </div>
+          <div class="hidden lg:flex items-center gap-3">
+            <button
+              onclick="navigateTo('faq')"
+              class="text-sm text-zinc-400 hover:text-white transition-colors px-4 py-2"
+            >
+              FAQ
+            </button>
+            <button
+              onclick="navigateTo('classes')"
+              class="bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-white text-sm font-medium px-6 py-2.5 rounded-full hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all duration-300 hover:scale-105"
+            >
+              Start Learning
+            </button>
+          </div>
+          <button
+            id="mobileMenuBtn"
+            class="lg:hidden text-white p-2"
+            onclick="toggleMobileMenu()"
+          >
+            <iconify-icon
+              icon="lucide:menu"
+              width="24"
+              id="menuIcon"
+            ></iconify-icon>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden fixed inset-0 top-20 bg-[#09090b]/98 backdrop-blur-xl -translate-x-full transition-transform duration-500 z-50"
+      >
+        <div class="flex flex-col p-6 gap-2">
+          <a
+            href="#"
+            onclick="
+              navigateTo('home');
+              closeMobileMenu();
+            "
+            class="mobile-nav-link"
+            >Home</a
+          >
+          <a
+            href="#"
+            onclick="
+              navigateTo('about');
+              closeMobileMenu();
+            "
+            class="mobile-nav-link"
+            >About Us</a
+          >
+          <a
+            href="#"
+            onclick="
+              navigateTo('classes');
+              closeMobileMenu();
+            "
+            class="mobile-nav-link"
+            >All Classes</a
+          >
+          <div class="pl-4 flex flex-col gap-1 mt-1">
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('lkg');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >LKG</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('ukg');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >UKG</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class1');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 1</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class2');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 2</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class3');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 3</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class4');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 4</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class5');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 5</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class6');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 6</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class7');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 7</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class8');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 8</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class9');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 9</a
+            >
+            <a
+              href="#"
+              onclick="
+                navigateToLMS('class10');
+                closeMobileMenu();
+              "
+              class="mobile-nav-link text-sm text-zinc-400"
+              >Class 10</a
+            >
+          </div>
+          <a
+            href="#"
+            onclick="
+              navigateTo('blog');
+              closeMobileMenu();
+            "
+            class="mobile-nav-link"
+            >Blog</a
+          >
+          <a
+            href="#"
+            onclick="
+              navigateTo('pricing');
+              closeMobileMenu();
+            "
+            class="mobile-nav-link"
+            >Pricing</a
+          >
+          <a
+            href="#"
+            onclick="
+              navigateTo('contact');
+              closeMobileMenu();
+            "
+            class="mobile-nav-link"
+            >Contact</a
+          >
+          <a
+            href="#"
+            onclick="
+              navigateTo('faq');
+              closeMobileMenu();
+            "
+            class="mobile-nav-link"
+            >FAQ</a
+          >
+          <a
+            href="#"
+            onclick="
+              navigateTo('careers');
+              closeMobileMenu();
+            "
+            class="mobile-nav-link"
+            >Careers</a
+          >
+          <div class="mt-4 pt-4 border-t border-white/10">
+            <button
+              onclick="
+                navigateTo('classes');
+                closeMobileMenu();
+              "
+              class="w-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-white font-medium px-6 py-3 rounded-full"
+            >
+              Start Learning
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==================== PAGE: HOME ==================== -->
+    <div id="page-home" class="page active visible">
+      <!-- Hero Section -->
+      <section class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-indigo-950/30 via-[#09090b] to-[#09090b]"
+          ></div>
+          <div class="hero-grid"></div>
+        </div>
+        <!-- 3D Floating Shapes -->
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+          <div class="shape shape-4"></div>
+          <div class="shape shape-5"></div>
+          <div class="shape shape-6"></div>
+          <div class="shape shape-7"></div>
+          <div class="shape shape-8"></div>
+        </div>
+        <div
+          class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20"
+        >
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 hero-badge"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-green-400 animate-pulse"
+                ></span>
+                <span class="text-xs text-zinc-400 tracking-wide"
+                  >India's #1 Child Education Platform</span
+                >
+              </div>
+              <h1
+                class="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight leading-[1.05] mb-6 hero-title"
+              >
+                Learn, Play &
+                <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-pink-400"
+                  >Grow</span
+                >
+                Together
+              </h1>
+              <p
+                class="text-lg text-zinc-400 leading-relaxed max-w-lg mb-10 hero-desc"
+              >
+                From LKG to Class 10, give your child the best learning
+                experience with interactive videos, quizzes, and downloadable
+                study materials.
+              </p>
+              <div class="flex flex-wrap gap-4 hero-btns">
+                <button
+                  onclick="navigateTo('classes')"
+                  class="group bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-white font-medium px-8 py-4 rounded-full hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                >
+                  Explore Classes
+                  <iconify-icon
+                    icon="lucide:arrow-right"
+                    width="18"
+                    class="group-hover:translate-x-1 transition-transform"
+                  ></iconify-icon>
+                </button>
+                <button
+                  onclick="navigateTo('about')"
+                  class="group border border-white/20 text-white font-medium px-8 py-4 rounded-full hover:bg-white/5 transition-all duration-300 flex items-center gap-2"
+                >
+                  <iconify-icon
+                    icon="lucide:play-circle"
+                    width="20"
+                    class="text-indigo-400"
+                  ></iconify-icon>
+                  Watch Demo
+                </button>
+              </div>
+              <div class="flex items-center gap-8 mt-12 hero-stats">
+                <div>
+                  <p class="text-2xl font-semibold text-white">50K+</p>
+                  <p class="text-xs text-zinc-500">Active Students</p>
+                </div>
+                <div class="w-px h-10 bg-white/10"></div>
+                <div>
+                  <p class="text-2xl font-semibold text-white">500+</p>
+                  <p class="text-xs text-zinc-500">Video Lessons</p>
+                </div>
+                <div class="w-px h-10 bg-white/10"></div>
+                <div>
+                  <p class="text-2xl font-semibold text-white">1000+</p>
+                  <p class="text-xs text-zinc-500">Quiz Questions</p>
+                </div>
+              </div>
+            </div>
+            <div class="hidden lg:flex justify-center hero-visual">
+              <div class="relative">
+                <div class="hero-3d-card">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-fuchsia-500/20 rounded-3xl blur-xl"
+                  ></div>
+                  <div
+                    class="relative bg-zinc-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden"
+                  >
+                    <div
+                      class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-500/20 to-transparent rounded-bl-full"
+                    ></div>
+                    <div class="flex items-center gap-3 mb-6">
+                      <div
+                        class="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-xl"
+                      >
+                        🧒
+                      </div>
+                      <div>
+                        <p class="font-medium">Welcome back, Aarav!</p>
+                        <p class="text-xs text-zinc-500">
+                          Class 3 • Mathematics
+                        </p>
+                      </div>
+                    </div>
+                    <div class="space-y-3 mb-6">
+                      <div
+                        class="bg-white/5 rounded-xl p-4 flex items-center gap-3"
+                      >
+                        <div
+                          class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center"
+                        >
+                          <iconify-icon
+                            icon="lucide:play"
+                            width="16"
+                            class="text-indigo-400"
+                          ></iconify-icon>
+                        </div>
+                        <div class="flex-1">
+                          <p class="text-sm font-medium">
+                            Multiplication Tables
+                          </p>
+                          <div
+                            class="w-full h-1.5 bg-white/10 rounded-full mt-1.5"
+                          >
+                            <div
+                              class="h-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-full"
+                              style="width: 75%"
+                            ></div>
+                          </div>
+                        </div>
+                        <span class="text-xs text-zinc-500">75%</span>
+                      </div>
+                      <div
+                        class="bg-white/5 rounded-xl p-4 flex items-center gap-3"
+                      >
+                        <div
+                          class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center"
+                        >
+                          <iconify-icon
+                            icon="lucide:file-text"
+                            width="16"
+                            class="text-green-400"
+                          ></iconify-icon>
+                        </div>
+                        <div class="flex-1">
+                          <p class="text-sm font-medium">Grammar Basics</p>
+                          <div
+                            class="w-full h-1.5 bg-white/10 rounded-full mt-1.5"
+                          >
+                            <div
+                              class="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
+                              style="width: 45%"
+                            ></div>
+                          </div>
+                        </div>
+                        <span class="text-xs text-zinc-500">45%</span>
+                      </div>
+                      <div
+                        class="bg-white/5 rounded-xl p-4 flex items-center gap-3"
+                      >
+                        <div
+                          class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center"
+                        >
+                          <iconify-icon
+                            icon="lucide:trophy"
+                            width="16"
+                            class="text-amber-400"
+                          ></iconify-icon>
+                        </div>
+                        <div class="flex-1">
+                          <p class="text-sm font-medium">Science Quiz</p>
+                          <p class="text-xs text-amber-400 mt-0.5">
+                            Scored 8/10 ⭐
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <iconify-icon
+            icon="lucide:chevron-down"
+            width="24"
+            class="text-zinc-500"
+          ></iconify-icon>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="relative py-24 overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-[#09090b] via-zinc-900/30 to-[#09090b]"
+        ></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-indigo-400 mb-4">
+              Why Choose Us
+            </p>
+            <h2
+              class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4"
+            >
+              Everything Your Child
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400"
+                >Needs</span
+              >
+            </h2>
+            <p class="text-zinc-400 max-w-2xl mx-auto">
+              A complete learning ecosystem designed for young minds with
+              interactive content, assessments, and progress tracking.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="feature-card group" data-tilt>
+              <div
+                class="feature-icon bg-gradient-to-br from-indigo-500/20 to-indigo-600/10"
+              >
+                <iconify-icon
+                  icon="lucide:video"
+                  width="24"
+                  class="text-indigo-400"
+                ></iconify-icon>
+              </div>
+              <h3 class="text-lg font-medium mb-2">Video Lessons</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">
+                HD video lectures from expert teachers explaining concepts with
+                animations and visual aids.
+              </p>
+            </div>
+            <div class="feature-card group" data-tilt>
+              <div
+                class="feature-icon bg-gradient-to-br from-fuchsia-500/20 to-fuchsia-600/10"
+              >
+                <iconify-icon
+                  icon="lucide:file-down"
+                  width="24"
+                  class="text-fuchsia-400"
+                ></iconify-icon>
+              </div>
+              <h3 class="text-lg font-medium mb-2">PDF Materials</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">
+                Downloadable PDF notes, worksheets, and practice papers for
+                offline study.
+              </p>
+            </div>
+            <div class="feature-card group" data-tilt>
+              <div
+                class="feature-icon bg-gradient-to-br from-green-500/20 to-green-600/10"
+              >
+                <iconify-icon
+                  icon="lucide:brain"
+                  width="24"
+                  class="text-green-400"
+                ></iconify-icon>
+              </div>
+              <h3 class="text-lg font-medium mb-2">Interactive Quizzes</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">
+                Fun and engaging quiz sections after every chapter to test
+                understanding.
+              </p>
+            </div>
+            <div class="feature-card group" data-tilt>
+              <div
+                class="feature-icon bg-gradient-to-br from-amber-500/20 to-amber-600/10"
+              >
+                <iconify-icon
+                  icon="lucide:bar-chart-3"
+                  width="24"
+                  class="text-amber-400"
+                ></iconify-icon>
+              </div>
+              <h3 class="text-lg font-medium mb-2">Progress Tracking</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">
+                Real-time dashboards showing completion rates, scores, and areas
+                to improve.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Classes Preview Section -->
+      <section class="relative py-24 overflow-hidden">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-fuchsia-400 mb-4">
+              Our Programs
+            </p>
+            <h2
+              class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4"
+            >
+              Classes from
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-pink-400"
+                >LKG to 10</span
+              >
+            </h2>
+            <p class="text-zinc-400 max-w-2xl mx-auto">
+              Structured curriculum aligned with NCERT guidelines, designed for
+              holistic development.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6"
+            id="classesGrid"
+          >
+            <!-- Filled by JS -->
+          </div>
+          <div class="text-center mt-12">
+            <button
+              onclick="navigateTo('classes')"
+              class="group border border-white/20 text-white font-medium px-8 py-4 rounded-full hover:bg-white/5 transition-all duration-300 inline-flex items-center gap-2"
+            >
+              View All Classes
+              <iconify-icon
+                icon="lucide:arrow-right"
+                width="18"
+                class="group-hover:translate-x-1 transition-transform"
+              ></iconify-icon>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="relative py-24 overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-[#09090b] via-indigo-950/10 to-[#09090b]"
+        ></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-green-400 mb-4">
+              Simple Process
+            </p>
+            <h2
+              class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4"
+            >
+              How It Works
+            </h2>
+            <p class="text-zinc-400 max-w-2xl mx-auto">
+              Get started in three simple steps and transform your child's
+              learning journey.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="step-card fade-in" data-tilt>
+              <div class="step-number">01</div>
+              <div class="step-icon-wrap">
+                <iconify-icon
+                  icon="lucide:user-plus"
+                  width="32"
+                  class="text-indigo-400"
+                ></iconify-icon>
+              </div>
+              <h3 class="text-xl font-medium mb-3">Choose a Class</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                Select from LKG to Class 10 based on your child's current grade
+                level.
+              </p>
+            </div>
+            <div
+              class="step-card fade-in"
+              data-tilt
+              style="animation-delay: 0.2s"
+            >
+              <div class="step-number">02</div>
+              <div class="step-icon-wrap">
+                <iconify-icon
+                  icon="lucide:book-open"
+                  width="32"
+                  class="text-fuchsia-400"
+                ></iconify-icon>
+              </div>
+              <h3 class="text-xl font-medium mb-3">Start Learning</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                Watch videos, read explanations, and download study materials
+                chapter-wise.
+              </p>
+            </div>
+            <div
+              class="step-card fade-in"
+              data-tilt
+              style="animation-delay: 0.4s"
+            >
+              <div class="step-number">03</div>
+              <div class="step-icon-wrap">
+                <iconify-icon
+                  icon="lucide:award"
+                  width="32"
+                  class="text-green-400"
+                ></iconify-icon>
+              </div>
+              <h3 class="text-xl font-medium mb-3">Take Quizzes</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                Test knowledge with interactive quizzes and track progress on
+                your dashboard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="relative py-24 overflow-hidden">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-amber-400 mb-4">
+              Testimonials
+            </p>
+            <h2
+              class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4"
+            >
+              Parents
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400"
+                >Love Us</span
+              >
+            </h2>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="testimonial-card" data-tilt>
+              <div class="flex items-center gap-1 mb-4">
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+              </div>
+              <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                "My daughter loves the video lessons. The animations make
+                complex topics so easy to understand. Her grades improved
+                significantly in just 2 months!"
+              </p>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-sm font-medium"
+                >
+                  PS
+                </div>
+                <div>
+                  <p class="text-sm font-medium">Priya Sharma</p>
+                  <p class="text-xs text-zinc-500">Parent of Class 3 Student</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" data-tilt>
+              <div class="flex items-center gap-1 mb-4">
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+              </div>
+              <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                "The quiz section is fantastic! My son gets excited about
+                answering questions after each chapter. The PDF worksheets are
+                great for revision."
+              </p>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-sm font-medium"
+                >
+                  RG
+                </div>
+                <div>
+                  <p class="text-sm font-medium">Rajesh Gupta</p>
+                  <p class="text-xs text-zinc-500">Parent of Class 5 Student</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" data-tilt>
+              <div class="flex items-center gap-1 mb-4">
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  width="16"
+                  class="text-amber-400"
+                ></iconify-icon>
+              </div>
+              <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                "Best platform for early learners! My LKG child has learned
+                alphabets and numbers so quickly. The colorful interface keeps
+                them engaged."
+              </p>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-sm font-medium"
+                >
+                  AM
+                </div>
+                <div>
+                  <p class="text-sm font-medium">Anita Mehta</p>
+                  <p class="text-xs text-zinc-500">Parent of LKG Student</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="relative py-24 overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-[#09090b] via-indigo-950/20 to-[#09090b]"
+        ></div>
+        <div
+          class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in"
+        >
+          <div
+            class="cta-card p-12 lg:p-16 rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-xl relative overflow-hidden"
+          >
+            <div
+              class="absolute -top-20 -right-20 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl"
+            ></div>
+            <div
+              class="absolute -bottom-20 -left-20 w-60 h-60 bg-fuchsia-500/10 rounded-full blur-3xl"
+            ></div>
+            <div class="relative z-10">
+              <h2
+                class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-6"
+              >
+                Ready to Transform<br />Your Child's Learning?
+              </h2>
+              <p class="text-zinc-400 text-lg mb-10 max-w-xl mx-auto">
+                Join thousands of parents who trust FusionZone for their
+                children's education.
+              </p>
+              <div class="flex flex-wrap justify-center gap-4">
+                <button
+                  onclick="navigateTo('pricing')"
+                  class="group bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-white font-medium px-8 py-4 rounded-full hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                >
+                  Get Started Free
+                  <iconify-icon
+                    icon="lucide:arrow-right"
+                    width="18"
+                    class="group-hover:translate-x-1 transition-transform"
+                  ></iconify-icon>
+                </button>
+                <a
+                  href="https://wa.me/919876543210?text=I%20want%20to%20know%20more%20about%20your%20services"
+                  target="_blank"
+                  class="group border border-white/20 text-white font-medium px-8 py-4 rounded-full hover:bg-white/5 transition-all duration-300 flex items-center gap-2"
+                >
+                  <iconify-icon
+                    icon="lucide:message-circle"
+                    width="18"
+                    class="text-green-400"
+                  ></iconify-icon>
+                  Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: ABOUT ==================== -->
+    <div id="page-about" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-indigo-400 mb-4">
+              About Us
+            </p>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6"
+            >
+              Building the Future of
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400"
+                >Education</span
+              >
+            </h1>
+            <p class="text-zinc-400 text-lg max-w-3xl mx-auto">
+              FusionZone was founded with a simple mission — make quality
+              education accessible, engaging, and fun for every child in India.
+            </p>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+            <div class="fade-in">
+              <div class="about-image-grid">
+                <div
+                  class="about-img-card"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(99, 102, 241, 0.3),
+                      rgba(217, 70, 239, 0.3)
+                    );
+                  "
+                >
+                  <iconify-icon
+                    icon="lucide:target"
+                    width="48"
+                    class="text-indigo-300 mb-4"
+                  ></iconify-icon>
+                  <h3 class="text-xl font-medium mb-2">Our Mission</h3>
+                  <p class="text-sm text-zinc-300 leading-relaxed">
+                    To provide world-class digital education to children from
+                    pre-primary to secondary level, bridging the gap between
+                    traditional and modern learning.
+                  </p>
+                </div>
+                <div
+                  class="about-img-card"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(16, 185, 129, 0.3),
+                      rgba(6, 182, 212, 0.3)
+                    );
+                  "
+                >
+                  <iconify-icon
+                    icon="lucide:eye"
+                    width="48"
+                    class="text-emerald-300 mb-4"
+                  ></iconify-icon>
+                  <h3 class="text-xl font-medium mb-2">Our Vision</h3>
+                  <p class="text-sm text-zinc-300 leading-relaxed">
+                    A world where every child, regardless of location or
+                    background, has access to engaging, high-quality educational
+                    content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="fade-in">
+              <h2 class="text-2xl font-semibold mb-6">Our Story</h2>
+              <div class="space-y-4 text-zinc-400 leading-relaxed">
+                <p>
+                  FusionZone started in 2020 when a group of educators and
+                  technologists came together during the pandemic to solve a
+                  critical problem — how do we keep children engaged in learning
+                  when schools are closed?
+                </p>
+                <p>
+                  What began as a small YouTube channel with free video lessons
+                  for primary classes has grown into India's most comprehensive
+                  child education platform, serving over 50,000 students across
+                  12 class levels.
+                </p>
+                <p>
+                  Our team of 50+ experienced teachers, content creators, and
+                  developers work tirelessly to create content that is not just
+                  educational but truly delightful for young learners.
+                </p>
+              </div>
+              <div class="grid grid-cols-3 gap-6 mt-8">
+                <div
+                  class="text-center p-4 rounded-2xl bg-white/5 border border-white/5"
+                >
+                  <p
+                    class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400"
+                  >
+                    50+
+                  </p>
+                  <p class="text-xs text-zinc-500 mt-1">Expert Teachers</p>
+                </div>
+                <div
+                  class="text-center p-4 rounded-2xl bg-white/5 border border-white/5"
+                >
+                  <p
+                    class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-pink-400"
+                  >
+                    4+
+                  </p>
+                  <p class="text-xs text-zinc-500 mt-1">Years of Service</p>
+                </div>
+                <div
+                  class="text-center p-4 rounded-2xl bg-white/5 border border-white/5"
+                >
+                  <p
+                    class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"
+                  >
+                    15+
+                  </p>
+                  <p class="text-xs text-zinc-500 mt-1">States Reached</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Values -->
+          <div class="mb-24">
+            <h2 class="text-3xl font-semibold text-center mb-12 fade-in">
+              Our Core Values
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="value-card fade-in" data-tilt>
+                <div class="text-3xl mb-4">🎯</div>
+                <h3 class="font-medium mb-2">Excellence</h3>
+                <p class="text-sm text-zinc-400">
+                  We strive for the highest quality in every lesson, quiz, and
+                  resource we create.
+                </p>
+              </div>
+              <div class="value-card fade-in" data-tilt>
+                <div class="text-3xl mb-4">💡</div>
+                <h3 class="font-medium mb-2">Innovation</h3>
+                <p class="text-sm text-zinc-400">
+                  Constantly evolving our teaching methods with the latest
+                  technology and research.
+                </p>
+              </div>
+              <div class="value-card fade-in" data-tilt>
+                <div class="text-3xl mb-4">🤝</div>
+                <h3 class="font-medium mb-2">Accessibility</h3>
+                <p class="text-sm text-zinc-400">
+                  Making education available to every child, everywhere, at an
+                  affordable price.
+                </p>
+              </div>
+              <div class="value-card fade-in" data-tilt>
+                <div class="text-3xl mb-4">❤️</div>
+                <h3 class="font-medium mb-2">Child First</h3>
+                <p class="text-sm text-zinc-400">
+                  Every decision we make starts with one question: is this best
+                  for the child?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Team -->
+          <div>
+            <h2 class="text-3xl font-semibold text-center mb-12 fade-in">
+              Meet Our Team
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="team-card fade-in" data-tilt>
+                <div
+                  class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+                >
+                  DR
+                </div>
+                <h3 class="font-medium text-center">Dr. Ramesh Kumar</h3>
+                <p class="text-xs text-indigo-400 text-center mb-3">
+                  Founder & CEO
+                </p>
+                <p class="text-xs text-zinc-500 text-center">
+                  20+ years in education, former NCERT advisor
+                </p>
+              </div>
+              <div class="team-card fade-in" data-tilt>
+                <div
+                  class="w-20 h-20 rounded-2xl bg-gradient-to-br from-fuchsia-400 to-pink-500 flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+                >
+                  SP
+                </div>
+                <h3 class="font-medium text-center">Sneha Patel</h3>
+                <p class="text-xs text-fuchsia-400 text-center mb-3">
+                  Head of Content
+                </p>
+                <p class="text-xs text-zinc-500 text-center">
+                  M.Ed from Delhi University, 15 years teaching experience
+                </p>
+              </div>
+              <div class="team-card fade-in" data-tilt>
+                <div
+                  class="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+                >
+                  AK
+                </div>
+                <h3 class="font-medium text-center">Arun Krishnan</h3>
+                <p class="text-xs text-green-400 text-center mb-3">CTO</p>
+                <p class="text-xs text-zinc-500 text-center">
+                  IIT Bombay alumnus, ex-Flipkart tech lead
+                </p>
+              </div>
+              <div class="team-card fade-in" data-tilt>
+                <div
+                  class="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+                >
+                  MJ
+                </div>
+                <h3 class="font-medium text-center">Meera Joshi</h3>
+                <p class="text-xs text-amber-400 text-center mb-3">
+                  Creative Director
+                </p>
+                <p class="text-xs text-zinc-500 text-center">
+                  Award-winning animator, specializes in educational content
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: CLASSES OVERVIEW ==================== -->
+    <div id="page-classes" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-fuchsia-400 mb-4">
+              All Programs
+            </p>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6"
+            >
+              Choose Your
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400"
+                >Class</span
+              >
+            </h1>
+            <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+              Select a class to access chapter-wise video lessons, study
+              materials, and quizzes.
+            </p>
+          </div>
+          <!-- Filter Tabs -->
+          <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in">
+            <button class="class-filter active" data-filter="all">
+              All Classes
+            </button>
+            <button class="class-filter" data-filter="preprimary">
+              Pre-Primary
+            </button>
+            <button class="class-filter" data-filter="primary">
+              Primary (1-5)
+            </button>
+            <button class="class-filter" data-filter="secondary">
+              Secondary (6-10)
+            </button>
+          </div>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6"
+            id="allClassesGrid"
+          >
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: LMS ==================== -->
+    <div id="page-lms" class="page">
+      <section class="pt-24 pb-24 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- LMS Header -->
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 fade-in"
+          >
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <button
+                  onclick="navigateTo('classes')"
+                  class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
+                  <iconify-icon
+                    icon="lucide:arrow-left"
+                    width="16"
+                  ></iconify-icon>
+                </button>
+                <h1 id="lmsTitle" class="text-2xl sm:text-3xl font-semibold">
+                  LKG
+                </h1>
+              </div>
+              <p id="lmsSubtitle" class="text-zinc-400 text-sm ml-11">
+                Lower Kindergarten • 5 Chapters • 15 Lessons
+              </p>
+            </div>
+            <div class="flex items-center gap-3 ml-11 sm:ml-0">
+              <div
+                class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10"
+              >
+                <iconify-icon
+                  icon="lucide:bar-chart-3"
+                  width="16"
+                  class="text-indigo-400"
+                ></iconify-icon>
+                <span class="text-sm" id="lmsProgress">0% Complete</span>
+              </div>
+            </div>
+          </div>
+          <!-- LMS Layout -->
+          <div class="flex flex-col lg:flex-row gap-6">
+            <!-- Sidebar -->
+            <div class="lg:w-80 flex-shrink-0">
+              <div class="lg:sticky lg:top-24">
+                <div
+                  class="bg-zinc-900/80 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden"
+                >
+                  <div class="p-4 border-b border-white/5">
+                    <h3 class="font-medium text-sm flex items-center gap-2">
+                      <iconify-icon
+                        icon="lucide:book-open"
+                        width="16"
+                        class="text-indigo-400"
+                      ></iconify-icon>
+                      Chapters
+                    </h3>
+                  </div>
+                  <div
+                    id="lmsChapters"
+                    class="max-h-[60vh] overflow-y-auto lms-scrollbar"
+                  >
+                    <!-- Filled by JS -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Main Content -->
+            <div class="flex-1 min-w-0">
+              <div id="lmsContent" class="space-y-6">
+                <!-- Filled by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: BLOG ==================== -->
+    <div id="page-blog" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-green-400 mb-4">
+              Our Blog
+            </p>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6"
+            >
+              Latest
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"
+                >Articles</span
+              >
+            </h1>
+            <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+              Tips, guides, and insights for parents and educators to support
+              children's learning journey.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="blogGrid">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: BLOG DETAIL ==================== -->
+    <div id="page-blog-detail" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <button
+            onclick="navigateTo('blog')"
+            class="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors mb-8 fade-in"
+          >
+            <iconify-icon icon="lucide:arrow-left" width="16"></iconify-icon>
+            Back to Blog
+          </button>
+          <div id="blogDetailContent">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: CONTACT ==================== -->
+    <div id="page-contact" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-fuchsia-400 mb-4">
+              Get In Touch
+            </p>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6"
+            >
+              Contact
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400"
+                >Us</span
+              >
+            </h1>
+            <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+              Have questions? We'd love to hear from you. Send us a message and
+              we'll respond within 24 hours.
+            </p>
+          </div>
+          <div class="grid lg:grid-cols-5 gap-12">
+            <div class="lg:col-span-3 fade-in">
+              <form
+                id="contactForm"
+                class="space-y-6"
+                onsubmit="handleContactForm(event)"
+              >
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label class="text-sm text-zinc-400 mb-2 block"
+                      >Full Name *</label
+                    >
+                    <input
+                      type="text"
+                      required
+                      class="form-input"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label class="text-sm text-zinc-400 mb-2 block"
+                      >Email Address *</label
+                    >
+                    <input
+                      type="email"
+                      required
+                      class="form-input"
+                      placeholder="you@email.com"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label class="text-sm text-zinc-400 mb-2 block"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-input"
+                    placeholder="+91 XXXXX XXXXX"
+                  />
+                </div>
+                <div>
+                  <label class="text-sm text-zinc-400 mb-2 block"
+                    >Subject *</label
+                  >
+                  <select required class="form-input">
+                    <option value="">Select a subject</option>
+                    <option>General Inquiry</option>
+                    <option>Subscription Related</option>
+                    <option>Content Feedback</option>
+                    <option>Technical Issue</option>
+                    <option>Partnership</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-sm text-zinc-400 mb-2 block"
+                    >Message *</label
+                  >
+                  <textarea
+                    required
+                    rows="5"
+                    class="form-input resize-none"
+                    placeholder="Write your message here..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="group bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-white font-medium px-8 py-4 rounded-full hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                >
+                  Send Message
+                  <iconify-icon
+                    icon="lucide:send"
+                    width="18"
+                    class="group-hover:translate-x-1 transition-transform"
+                  ></iconify-icon>
+                </button>
+              </form>
+              <div
+                id="contactSuccess"
+                class="hidden mt-6 p-6 rounded-2xl bg-green-500/10 border border-green-500/20 text-center"
+              >
+                <iconify-icon
+                  icon="lucide:check-circle"
+                  width="48"
+                  class="text-green-400 mb-3"
+                ></iconify-icon>
+                <h3 class="text-lg font-medium text-green-300">
+                  Message Sent Successfully!
+                </h3>
+                <p class="text-sm text-zinc-400 mt-2">
+                  We'll get back to you within 24 hours.
+                </p>
+              </div>
+            </div>
+            <div class="lg:col-span-2 fade-in">
+              <div class="space-y-6">
+                <div class="contact-info-card">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-4"
+                  >
+                    <iconify-icon
+                      icon="lucide:mail"
+                      width="20"
+                      class="text-indigo-400"
+                    ></iconify-icon>
+                  </div>
+                  <h3 class="font-medium mb-1">Email Us</h3>
+                  <p class="text-sm text-zinc-400">support@FusionZone.com</p>
+                  <p class="text-sm text-zinc-400">info@FusionZone.com</p>
+                </div>
+                <div class="contact-info-card">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-4"
+                  >
+                    <iconify-icon
+                      icon="lucide:phone"
+                      width="20"
+                      class="text-green-400"
+                    ></iconify-icon>
+                  </div>
+                  <h3 class="font-medium mb-1">Call Us</h3>
+                  <p class="text-sm text-zinc-400">+91 98765 43210</p>
+                  <p class="text-sm text-zinc-400">Mon-Sat, 9 AM - 6 PM IST</p>
+                </div>
+                <div class="contact-info-card">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-fuchsia-500/20 flex items-center justify-center mb-4"
+                  >
+                    <iconify-icon
+                      icon="lucide:map-pin"
+                      width="20"
+                      class="text-fuchsia-400"
+                    ></iconify-icon>
+                  </div>
+                  <h3 class="font-medium mb-1">Visit Us</h3>
+                  <p class="text-sm text-zinc-400">
+                    FusionZone Pvt. Ltd.<br />123 Education Hub, Sector 62<br />Noida,
+                    UP 201301, India
+                  </p>
+                </div>
+                <div class="contact-info-card">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4"
+                  >
+                    <iconify-icon
+                      icon="lucide:message-circle"
+                      width="20"
+                      class="text-amber-400"
+                    ></iconify-icon>
+                  </div>
+                  <h3 class="font-medium mb-1">WhatsApp</h3>
+                  <a
+                    href="https://wa.me/919876543210?text=I%20want%20to%20know%20more%20about%20your%20services"
+                    target="_blank"
+                    class="text-sm text-green-400 hover:text-green-300 transition-colors"
+                    >Chat with us on WhatsApp →</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: PRIVACY POLICY ==================== -->
+    <div id="page-privacy" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 fade-in">
+            <p class="text-xs uppercase tracking-widest text-zinc-500 mb-4">
+              Legal
+            </p>
+            <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">
+              Privacy Policy
+            </h1>
+            <p class="text-zinc-500 text-sm mt-3">
+              Last updated: January 15, 2025
+            </p>
+          </div>
+          <div class="prose-content fade-in">
+            <div class="policy-section">
+              <h2>1. Introduction</h2>
+              <p>
+                FusionZone Pvt. Ltd. ("we," "our," or "us") is committed to
+                protecting the privacy of children and their parents/guardians
+                who use our educational platform at FusionZone.com (the
+                "Platform"). This Privacy Policy explains how we collect, use,
+                disclose, and safeguard your information when you use our
+                Platform.
+              </p>
+              <p>
+                By accessing or using our Platform, you agree to the collection
+                and use of information in accordance with this policy. If you do
+                not agree with the terms of this privacy policy, please do not
+                access the Platform.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>2. Information We Collect</h2>
+              <h3>2.1 Personal Information</h3>
+              <p>
+                We may collect personal information that you voluntarily provide
+                to us when you register on the Platform, subscribe to our
+                services, or contact us, including: name, email address, phone
+                number, postal address, payment information, and the child's
+                name and class level.
+              </p>
+              <h3>2.2 Usage Information</h3>
+              <p>
+                We automatically collect certain information when you access the
+                Platform, including: IP address, browser type, operating system,
+                access times, pages viewed, links clicked, and the referring
+                URL. We also track learning progress, quiz scores, and time
+                spent on each lesson.
+              </p>
+              <h3>2.3 Cookies and Tracking Technologies</h3>
+              <p>
+                We use cookies, web beacons, and similar tracking technologies
+                to track activity on our Platform and hold certain information.
+                You can instruct your browser to refuse all cookies or to
+                indicate when a cookie is being sent.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>3. How We Use Your Information</h2>
+              <p>
+                We use the collected information for: providing and maintaining
+                our educational services; personalizing the learning experience;
+                sending progress reports to parents; processing payments;
+                sending promotional communications (with consent); responding to
+                inquiries; improving our Platform; and complying with legal
+                obligations.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>4. Children's Privacy</h2>
+              <p>
+                Our Platform is designed for children under the age of 13. We
+                comply with applicable children's privacy laws. We do not
+                knowingly collect personal information from children without
+                verifiable parental consent. Parents/guardians can review,
+                modify, or delete their child's information at any time by
+                contacting us.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>5. Data Sharing and Disclosure</h2>
+              <p>
+                We do not sell, trade, or rent your personal information to
+                third parties. We may share information with: service providers
+                who assist in operating our Platform; payment processors;
+                analytics providers; law enforcement when required by law; and
+                business partners with your explicit consent.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>6. Data Security</h2>
+              <p>
+                We implement appropriate technical and organizational security
+                measures to protect your personal information against
+                unauthorized access, alteration, disclosure, or destruction.
+                This includes encryption, secure servers, regular security
+                audits, and access controls.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>7. Data Retention</h2>
+              <p>
+                We retain your personal information for as long as your account
+                is active or as needed to provide you services. We may retain
+                and use your information as necessary to comply with legal
+                obligations, resolve disputes, and enforce our agreements.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>8. Your Rights</h2>
+              <p>
+                You have the right to: access your personal information; correct
+                inaccurate information; delete your information; withdraw
+                consent for data processing; data portability; and lodge a
+                complaint with a supervisory authority.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>9. Changes to This Policy</h2>
+              <p>
+                We may update this Privacy Policy from time to time. We will
+                notify you of any changes by posting the new Privacy Policy on
+                this page and updating the "Last updated" date. Your continued
+                use of the Platform after changes constitutes acceptance of the
+                updated policy.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>10. Contact Us</h2>
+              <p>
+                If you have any questions about this Privacy Policy, please
+                contact us at: privacy@FusionZone.com or call us at +91 98765
+                43210.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: TERMS & CONDITIONS ==================== -->
+    <div id="page-terms" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 fade-in">
+            <p class="text-xs uppercase tracking-widest text-zinc-500 mb-4">
+              Legal
+            </p>
+            <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">
+              Terms & Conditions
+            </h1>
+            <p class="text-zinc-500 text-sm mt-3">
+              Last updated: January 15, 2025
+            </p>
+          </div>
+          <div class="prose-content fade-in">
+            <div class="policy-section">
+              <h2>1. Acceptance of Terms</h2>
+              <p>
+                By accessing and using FusionZone ("the Platform"), you accept
+                and agree to be bound by these Terms and Conditions. If you do
+                not agree, you must not use the Platform. These terms apply to
+                all visitors, users, students, parents, and guardians.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>2. Description of Service</h2>
+              <p>
+                FusionZone provides online educational content including video
+                lessons, PDF study materials, quizzes, and progress tracking for
+                students from LKG to Class 10. The service is accessible via web
+                browser and mobile applications.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>3. User Accounts</h2>
+              <p>
+                To access certain features, you must create an account. You are
+                responsible for maintaining the confidentiality of your account
+                credentials. You must provide accurate information and update it
+                when necessary. Parents or guardians must create accounts on
+                behalf of children under 18.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>4. Subscription and Payments</h2>
+              <p>
+                Certain content requires a paid subscription. Prices are listed
+                on our pricing page and may change with notice. Subscriptions
+                auto-renew unless cancelled before the billing date. All
+                payments are processed through secure third-party payment
+                gateways. Refunds are subject to our Refund Policy.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>5. Intellectual Property</h2>
+              <p>
+                All content on the Platform, including but not limited to
+                videos, text, graphics, logos, and software, is the property of
+                FusionZone or its content creators and is protected by
+                copyright, trademark, and other intellectual property laws. You
+                may not reproduce, distribute, or create derivative works
+                without written permission.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>6. Acceptable Use</h2>
+              <p>
+                You agree not to: use the Platform for unlawful purposes; share
+                account credentials; attempt to hack or disrupt the Platform;
+                download content for redistribution; use automated tools to
+                scrape data; or harass other users. Violation may result in
+                account termination.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>7. Disclaimer of Warranties</h2>
+              <p>
+                The Platform is provided "as is" without warranties of any kind.
+                We do not guarantee that the content is error-free, that the
+                Platform will be uninterrupted, or that results from using the
+                Platform will meet your expectations. Educational outcomes
+                depend on individual effort.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>8. Limitation of Liability</h2>
+              <p>
+                FusionZone shall not be liable for any indirect, incidental,
+                special, consequential, or punitive damages arising from your
+                use of the Platform. Our total liability shall not exceed the
+                amount paid by you in the preceding 12 months.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>9. Governing Law</h2>
+              <p>
+                These terms are governed by the laws of India. Any disputes
+                shall be subject to the exclusive jurisdiction of the courts in
+                Noida, Uttar Pradesh.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>10. Contact</h2>
+              <p>
+                For questions about these terms, contact legal@FusionZone.com or
+                call +91 98765 43210.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: REFUND POLICY ==================== -->
+    <div id="page-refund" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 fade-in">
+            <p class="text-xs uppercase tracking-widest text-zinc-500 mb-4">
+              Legal
+            </p>
+            <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">
+              Refund Policy
+            </h1>
+            <p class="text-zinc-500 text-sm mt-3">
+              Last updated: January 15, 2025
+            </p>
+          </div>
+          <div class="prose-content fade-in">
+            <div class="policy-section">
+              <h2>1. Overview</h2>
+              <p>
+                At FusionZone, we want you to be completely satisfied with our
+                services. This Refund Policy outlines the circumstances under
+                which we offer refunds for our subscription services.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>2. 7-Day Money-Back Guarantee</h2>
+              <p>
+                We offer a 7-day money-back guarantee on all new subscriptions.
+                If you are not satisfied with our service for any reason, you
+                can request a full refund within 7 days of your initial
+                purchase. No questions asked.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>3. Eligibility for Refund</h2>
+              <p>
+                To be eligible for a refund: the request must be made within 7
+                days of purchase; you must not have consumed more than 30% of
+                the course content; your account must not have been suspended
+                for violations; and this must be your first refund request for
+                the subscription.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>4. Non-Refundable Items</h2>
+              <p>
+                The following are not eligible for refunds: subscriptions older
+                than 7 days; renewal payments (unless requested before the
+                renewal date); promotional or discounted subscriptions; gift
+                subscriptions; and accounts that have been terminated for
+                violations.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>5. How to Request a Refund</h2>
+              <p>
+                To request a refund, email us at refund@FusionZone.com with your
+                registered email, subscription details, and reason for refund.
+                Refunds are processed within 5-7 business days and credited to
+                the original payment method.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>6. Cancellation</h2>
+              <p>
+                You can cancel your subscription at any time from your account
+                settings. Upon cancellation, you will retain access until the
+                end of your current billing period. No partial refunds are
+                provided for unused time in a billing period.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>7. Contact</h2>
+              <p>
+                For refund queries, contact refund@FusionZone.com or call +91
+                98765 43210.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: COOKIE POLICY ==================== -->
+    <div id="page-cookie" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 fade-in">
+            <p class="text-xs uppercase tracking-widest text-zinc-500 mb-4">
+              Legal
+            </p>
+            <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">
+              Cookie Policy
+            </h1>
+            <p class="text-zinc-500 text-sm mt-3">
+              Last updated: January 15, 2025
+            </p>
+          </div>
+          <div class="prose-content fade-in">
+            <div class="policy-section">
+              <h2>1. What Are Cookies</h2>
+              <p>
+                Cookies are small text files stored on your device when you
+                visit a website. They help the website remember your
+                preferences, understand how you use the site, and improve your
+                experience.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>2. Types of Cookies We Use</h2>
+              <h3>Essential Cookies</h3>
+              <p>
+                Required for the Platform to function properly. These include
+                session cookies, authentication cookies, and security cookies.
+                They cannot be disabled.
+              </p>
+              <h3>Performance Cookies</h3>
+              <p>
+                Help us understand how visitors interact with our Platform by
+                collecting anonymous data. We use Google Analytics for this
+                purpose.
+              </p>
+              <h3>Functionality Cookies</h3>
+              <p>
+                Remember your preferences and choices (like language, class
+                selection, and theme) to provide a more personalized experience.
+              </p>
+              <h3>Marketing Cookies</h3>
+              <p>
+                Used to deliver relevant advertisements and track campaign
+                effectiveness. These are set with your consent only.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>3. Third-Party Cookies</h2>
+              <p>
+                We use cookies from trusted third parties: Google Analytics
+                (performance), YouTube (video embedding), and payment
+                processors. Each third party has their own cookie policy.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>4. Managing Cookies</h2>
+              <p>
+                You can control cookies through your browser settings. Most
+                browsers allow you to refuse or delete cookies. Note that
+                disabling cookies may affect Platform functionality. You can
+                also opt out of Google Analytics tracking.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>5. Updates</h2>
+              <p>
+                We may update this Cookie Policy periodically. Changes will be
+                posted on this page with an updated date.
+              </p>
+            </div>
+            <div class="policy-section">
+              <h2>6. Contact</h2>
+              <p>For cookie-related queries, email privacy@FusionZone.com.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: FAQ ==================== -->
+    <div id="page-faq" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-amber-400 mb-4">
+              Help Center
+            </p>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6"
+            >
+              Frequently Asked
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400"
+                >Questions</span
+              >
+            </h1>
+            <p class="text-zinc-400 text-lg">
+              Find answers to common questions about FusionZone.
+            </p>
+          </div>
+          <div class="space-y-3 fade-in" id="faqContainer">
+            <!-- Filled by JS -->
+          </div>
+          <div class="text-center mt-12 fade-in">
+            <p class="text-zinc-400 mb-4">Still have questions?</p>
+            <a
+              href="https://wa.me/919876543210?text=I%20want%20to%20know%20more%20about%20your%20services"
+              target="_blank"
+              class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-medium px-6 py-3 rounded-full transition-colors"
+            >
+              <iconify-icon
+                icon="lucide:message-circle"
+                width="18"
+              ></iconify-icon>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: PRICING ==================== -->
+    <div id="page-pricing" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-indigo-400 mb-4">
+              Pricing Plans
+            </p>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6"
+            >
+              Simple, Transparent
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400"
+                >Pricing</span
+              >
+            </h1>
+            <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+              Choose the plan that fits your child's learning needs. All plans
+              include a 7-day free trial.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Free Plan -->
+            <div class="pricing-card fade-in" data-tilt>
+              <div
+                class="p-8 rounded-2xl border border-white/10 bg-zinc-900/50 backdrop-blur-xl h-full flex flex-col"
+              >
+                <h3 class="text-lg font-medium mb-1">Starter</h3>
+                <p class="text-sm text-zinc-500 mb-6">
+                  For exploring the platform
+                </p>
+                <div class="mb-6">
+                  <span class="text-4xl font-bold">₹0</span>
+                  <span class="text-zinc-500 text-sm">/month</span>
+                </div>
+                <ul class="space-y-3 mb-8 flex-1">
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    Access to LKG & UKG content
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    5 video lessons per class
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    Basic quizzes
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-500">
+                    <iconify-icon
+                      icon="lucide:x"
+                      width="16"
+                      class="text-zinc-600"
+                    ></iconify-icon>
+                    PDF downloads
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-500">
+                    <iconify-icon
+                      icon="lucide:x"
+                      width="16"
+                      class="text-zinc-600"
+                    ></iconify-icon>
+                    Progress tracking
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-500">
+                    <iconify-icon
+                      icon="lucide:x"
+                      width="16"
+                      class="text-zinc-600"
+                    ></iconify-icon>
+                    Parent dashboard
+                  </li>
+                </ul>
+                <button
+                  onclick="navigateTo('classes')"
+                  class="w-full py-3 rounded-full border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors"
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
+            <!-- Pro Plan -->
+            <div
+              class="pricing-card popular fade-in"
+              data-tilt
+              style="animation-delay: 0.2s"
+            >
+              <div
+                class="p-8 rounded-2xl border-2 border-indigo-500/50 bg-zinc-900/80 backdrop-blur-xl h-full flex flex-col relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-xs font-medium px-4 py-1.5 rounded-bl-xl"
+                >
+                  MOST POPULAR
+                </div>
+                <h3 class="text-lg font-medium mb-1">Pro</h3>
+                <p class="text-sm text-zinc-500 mb-6">For serious learners</p>
+                <div class="mb-6">
+                  <span class="text-4xl font-bold">₹499</span>
+                  <span class="text-zinc-500 text-sm">/month</span>
+                </div>
+                <ul class="space-y-3 mb-8 flex-1">
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    Access to Class 1-5 content
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    Unlimited video lessons
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    All interactive quizzes
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    PDF downloads
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    Progress tracking
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-500">
+                    <iconify-icon
+                      icon="lucide:x"
+                      width="16"
+                      class="text-zinc-600"
+                    ></iconify-icon>
+                    Parent dashboard
+                  </li>
+                </ul>
+                <button
+                  onclick="navigateTo('classes')"
+                  class="w-full py-3 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-sm font-medium hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all duration-300 hover:scale-105"
+                >
+                  Start Free Trial
+                </button>
+              </div>
+            </div>
+            <!-- Premium Plan -->
+            <div
+              class="pricing-card fade-in"
+              data-tilt
+              style="animation-delay: 0.4s"
+            >
+              <div
+                class="p-8 rounded-2xl border border-white/10 bg-zinc-900/50 backdrop-blur-xl h-full flex flex-col"
+              >
+                <h3 class="text-lg font-medium mb-1">Premium</h3>
+                <p class="text-sm text-zinc-500 mb-6">
+                  Complete learning solution
+                </p>
+                <div class="mb-6">
+                  <span class="text-4xl font-bold">₹899</span>
+                  <span class="text-zinc-500 text-sm">/month</span>
+                </div>
+                <ul class="space-y-3 mb-8 flex-1">
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    Access to ALL classes (LKG-10)
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    Unlimited video lessons
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    All interactive quizzes
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    All PDF downloads
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    Advanced progress tracking
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-300">
+                    <iconify-icon
+                      icon="lucide:check"
+                      width="16"
+                      class="text-green-400"
+                    ></iconify-icon>
+                    Parent dashboard & reports
+                  </li>
+                </ul>
+                <button
+                  onclick="navigateTo('classes')"
+                  class="w-full py-3 rounded-full border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors"
+                >
+                  Start Free Trial
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-12 fade-in">
+            <p class="text-sm text-zinc-500">
+              All plans include a 7-day money-back guarantee. No credit card
+              required for starter plan.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: CAREERS ==================== -->
+    <div id="page-careers" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <p class="text-xs uppercase tracking-widest text-green-400 mb-4">
+              Join Our Team
+            </p>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6"
+            >
+              We're
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"
+                >Hiring</span
+              >
+            </h1>
+            <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+              Help us shape the future of education. Join a passionate team
+              making a difference in children's lives.
+            </p>
+          </div>
+          <div
+            class="max-w-3xl mx-auto space-y-4 fade-in"
+            id="careersContainer"
+          >
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE: SITEMAP ==================== -->
+    <div id="page-sitemap" class="page">
+      <section class="pt-32 pb-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 fade-in">
+            <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">
+              Sitemap
+            </h1>
+            <p class="text-zinc-400 mt-4">
+              A complete overview of all pages on FusionZone.
+            </p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-8 fade-in" id="sitemapContainer">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="relative border-t border-white/5 bg-[#09090b]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div class="lg:col-span-2">
+            <a
+              href="#"
+              onclick="navigateTo('home')"
+              class="flex items-center gap-3 mb-4"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center"
+              >
+                <iconify-icon
+                  icon="lucide:graduation-cap"
+                  width="22"
+                  class="text-white"
+                ></iconify-icon>
+              </div>
+              <span class="text-xl font-semibold tracking-tight font-space"
+                >KidLearn<span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400"
+                  >Pro</span
+                ></span
+              >
+            </a>
+            <p class="text-sm text-zinc-500 leading-relaxed mb-6 max-w-sm">
+              India's premier child education platform offering interactive
+              learning from LKG to Class 10 with video lessons, quizzes, and
+              study materials.
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                <iconify-icon
+                  icon="lucide:facebook"
+                  width="16"
+                  class="text-zinc-400"
+                ></iconify-icon>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                <iconify-icon
+                  icon="lucide:instagram"
+                  width="16"
+                  class="text-zinc-400"
+                ></iconify-icon>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                <iconify-icon
+                  icon="lucide:twitter"
+                  width="16"
+                  class="text-zinc-400"
+                ></iconify-icon>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                <iconify-icon
+                  icon="lucide:youtube"
+                  width="16"
+                  class="text-zinc-400"
+                ></iconify-icon>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-medium text-sm mb-4">Classes</h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('lkg')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >LKG</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('ukg')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >UKG</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class1')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 1</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class2')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 2</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class3')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 3</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class4')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 4</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-medium text-sm mb-4">More Classes</h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class5')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 5</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class6')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 6</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class7')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 7</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class8')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 8</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class9')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 9</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateToLMS('class10')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Class 10</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-medium text-sm mb-4">Company</h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateTo('about')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateTo('blog')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateTo('careers')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateTo('contact')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateTo('pricing')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="navigateTo('faq')"
+                  class="text-sm text-zinc-500 hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-white/5 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-xs text-zinc-600">
+            © 2025 FusionZone Pvt. Ltd. All rights reserved.
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              href="#"
+              onclick="navigateTo('privacy')"
+              class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              onclick="navigateTo('terms')"
+              class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+              >Terms & Conditions</a
+            >
+            <a
+              href="#"
+              onclick="navigateTo('refund')"
+              class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+              >Refund Policy</a
+            >
+            <a
+              href="#"
+              onclick="navigateTo('cookie')"
+              class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+              >Cookie Policy</a
+            >
+            <a
+              href="#"
+              onclick="navigateTo('sitemap')"
+              class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+              >Sitemap</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/919876543210?text=I%20want%20to%20know%20more%20about%20your%20services"
+      target="_blank"
+      id="whatsappBtn"
+      class="fixed bottom-6 right-6 z-[200] group"
+    >
+      <div class="relative">
+        <div
+          class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20"
+        ></div>
+        <div
+          class="relative w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 group-hover:scale-110 transition-transform duration-300"
+        >
+          <iconify-icon
+            icon="lucide:message-circle"
+            width="26"
+            class="text-white"
+          ></iconify-icon>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-16 right-0 bg-zinc-900 border border-white/10 rounded-xl px-4 py-2.5 whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 shadow-xl"
+      >
+        <p class="text-xs font-medium">Chat with us!</p>
+        <p class="text-[10px] text-zinc-500">Usually replies within minutes</p>
+        <div
+          class="absolute -bottom-1.5 right-5 w-3 h-3 bg-zinc-900 border-r border-b border-white/10 transform rotate-45"
+        ></div>
+      </div>
+    </a>
+
+    <!-- Toast Notification -->
+    <div
+      id="toast"
+      class="fixed top-24 right-6 z-[300] transform translate-x-[400px] transition-transform duration-500"
+    >
+      <div
+        class="bg-zinc-900 border border-white/10 rounded-xl px-5 py-4 shadow-2xl flex items-center gap-3 max-w-sm"
+      >
+        <iconify-icon
+          id="toastIcon"
+          icon="lucide:check-circle"
+          width="20"
+          class="text-green-400 flex-shrink-0"
+        ></iconify-icon>
+        <p id="toastMsg" class="text-sm"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
